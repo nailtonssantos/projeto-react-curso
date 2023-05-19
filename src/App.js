@@ -11,11 +11,11 @@ class App extends Component {
     super(props)
 
     this.state = {
-      nome : '',
-      nota01 : null,
-      nota02 : null,
-      media : null,
-      vetor : []
+      nome    : '',
+      nota01  : '',
+      nota02  : '',
+      media   : '',
+      vetor   : []
     }
   }
 
@@ -32,14 +32,19 @@ class App extends Component {
       var calculoMedia = ((Number(this.state.nota01) + Number(this.state.nota02)) / 2)
 
       copiaVetor.push({
-        'nome' : this.state.nome,
-        'nota01' : this.state.nota01,
-        'nota02' : this.state.nota02,
-        'media' : calculoMedia
+        'nome'    : this.state.nome,
+        'nota01'  : this.state.nota01,
+        'nota02'  : this.state.nota02,
+        'media'   : calculoMedia
       })
 
-
       this.setState({vetor: copiaVetor})
+
+      this.setState({
+        nome    : '',
+        nota01  : '',
+        nota02  : ''
+      })
   }
 
   render() {
@@ -47,7 +52,7 @@ class App extends Component {
     return (
       <div className='container'>
           <h1 className='m-3 align-items-center justify-content-center row'>Projeto Final</h1>
-          <CadastroAluno funcaoBotao={this.aoClicar} funcaoCampos={this.aoDigitar}/>
+          <CadastroAluno campoNome={this.state.nome} campoNota01={this.state.nota01} campoNota02={this.state.nota02} funcaoBotao={this.aoClicar} funcaoCampos={this.aoDigitar}/>
           <Tabela dados={this.state.vetor}/>
       </div>
       
