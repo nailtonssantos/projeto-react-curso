@@ -34,14 +34,14 @@ class Tabela extends Component{
                     </tbody>
                 </table>
                 <div>
-                    {this.props.dados.map((elemento, indice) => {
-                        return(
-                            <div className='d-flex mt-5'>
-                                <h3 className='bg-success p-2 m-2'>Aprovados: {elemento.totalAprovados}</h3>
-                                <h3 className='bg-danger p-2 m-2'>Reprovados: {elemento.totalReprovados}</h3>
-                            </div>
-                        )
-                    })}
+                    {this.props.dados.map((elemento, indice) => (
+                            
+                        <div className='d-flex mt-5'>
+                            <h3 className='bg-success p-2 m-2'>Aprovados: {elemento.totalAprovados}</h3>
+                            <h3 className='bg-danger p-2 m-2'>Reprovados: {elemento.totalReprovados}</h3>
+                        </div>
+                            
+                    ))}
                 </div>
             </div>
         )
