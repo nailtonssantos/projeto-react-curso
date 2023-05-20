@@ -7,7 +7,15 @@ class Tabela extends Component{
     //Render
     render(){
         return(
-            <div className="container mt-5 text-center">
+            <div className="container mt-3 text-center">
+                <div>
+                        <div className='mt-4'>
+                            <div className='d-flex justify-content-center align-items-center mb-4'>
+                            <h5 className='bg-success p-2 m-2 rounded '>Aprovados: {this.props.aprovados}</h5>
+                            <h5 className='bg-danger p-2 m-2 rounded'>Reprovados: {this.props.reprovados}</h5>
+                            </div>
+                        </div>
+                </div>
                 <table className="table">
                     <thead>
                         <tr>
@@ -16,6 +24,7 @@ class Tabela extends Component{
                             <th>Nota 02</th>
                             <th>Média</th>
                             <th>Situação</th>
+                            <th>Selecionar</th>
                         </tr>
                     </thead>
 
@@ -28,21 +37,12 @@ class Tabela extends Component{
                                     <td>{elemento.nota02}</td>
                                     <td>{elemento.media}</td>
                                     <td>{elemento.situacao}</td>
+                                    <td></td>
                                 </tr>
                             )
                         })}
                     </tbody>
                 </table>
-                <div>
-                    {this.props.dados.map((elemento, indice) => (
-                            
-                        <div className='d-flex mt-5'>
-                            <h3 className='bg-success p-2 m-2'>Aprovados: {elemento.totalAprovados}</h3>
-                            <h3 className='bg-danger p-2 m-2'>Reprovados: {elemento.totalReprovados}</h3>
-                        </div>
-                            
-                    ))}
-                </div>
             </div>
         )
     }
